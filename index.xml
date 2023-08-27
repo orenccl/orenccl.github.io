@@ -8,12 +8,13 @@
     <language>zh-tw</language>
     <lastBuildDate>Sat, 19 Aug 2023 14:42:00 +0800</lastBuildDate><atom:link href="https://orenccl.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>轉移Eclipse舊專案到IntelliJ IDEA開發</title>
-      <link>https://orenccl.github.io/blog/transfereclispetointellij/</link>
+      <title>轉移Eclipse舊專案到IntelliJ的心得</title>
+      <link>https://orenccl.github.io/blog/migratefromeclipsetointellij/</link>
       <pubDate>Sat, 19 Aug 2023 14:42:00 +0800</pubDate>
       
-      <guid>https://orenccl.github.io/blog/transfereclispetointellij/</guid>
-      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
+      <guid>https://orenccl.github.io/blog/migratefromeclipsetointellij/</guid>
+      <description>公司請我參與一個 Vue 前端專案，接手後才發現是使用 Eclipse 建置的 Maven Spring Boot 全端專案。
+當下其實滿傻眼的，因為我沒接觸過 Java 跟該語言的周邊生態，也沒有後端工作經驗，公司說法也只是 Vue 前端。</description>
     </item>
     
   </channel>

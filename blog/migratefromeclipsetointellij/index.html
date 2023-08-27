@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta
         name="description"
-        content="英俊善良的心得分享"
+        content="Eclipse 建置的 Maven Spring Boot 全端專案"
     />
     
     <meta name="author" content="英俊善良" />
@@ -105,91 +105,51 @@
 <!-- /navigation -->
 
 
-
-<section class="section pb-0">
+<section class="section-sm">
   <div class="container">
     <div class="row">
-      
-      <div class="col-lg-4 d-none d-lg-block">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img
-        src="https://orenccl.github.io/images/author.jpg"
-        alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4"
-      />
-      
-      <p>我是英俊善良</p>
-      <a href="https://orenccl.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li>
-          <a href="/categories/ide/">Ide</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
-        
-        <li class="list-inline-item">
-          <a href="https://github.com/orenccl"><i class="ti-github"></i></a>
-        </li>
-        
-        <li class="list-inline-item">
-          <a href="https://www.cakeresume.com/jun-liang-chen/portfolios"><i class="ti-link"></i></a>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-      
-
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-            <div class="col-md-12 mb-4">
-  <article class="card">
-    
-    <div class="card-body">
-      <a href="https://orenccl.github.io/blog/migratefromeclipsetointellij/" class="h3 d-block my-3">轉移Eclipse舊專案到IntelliJ的心得</a>
-      <div class="mb-3 post-meta">
-        <span>By 英俊善良</span>
-        
-        <span class="border-bottom border-primary px-2 mx-1"></span>
-        <span>2023-08-19</span>
-         
-        <span class="border-bottom border-primary px-2 mx-1"></span>
-        <a href="/categories/ide" class="text-primary">
-          Ide
-        </a>
-        
-      </div>
-      <p class="card-text">Eclipse 建置的 Maven Spring Boot 全端專案</p>
-      <a href="https://orenccl.github.io/blog/migratefromeclipsetointellij/" class="btn btn-outline-primary">read more</a>
-    </div>
-  </article>
-</div>
- 
+      <div class="col-lg-9 mx-auto">
+        <h3 class="text-center">轉移Eclipse舊專案到IntelliJ的心得</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By 英俊善良</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>2023-08-19</span>
+           
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <a href="/categories/ide" class="text-primary"
+            >Ide</a
+          >
+          
         </div>
-      </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem"></div>
+        
+        <div class="content"><p>公司請我參與一個 Vue 前端專案，接手後才發現是使用 Eclipse 建置的 Maven Spring Boot 全端專案。</p>
+<p>當下其實滿傻眼的，因為我沒接觸過 Java 跟該語言的周邊生態，也沒有後端工作經驗，公司說法也只是 Vue 前端。</p>
+<p>身為前端工程師，全身心都已經是 VS Code 的形狀了，叫我用 Eclipse 開發根本是酷刑!</p>
+<p>馬上 Google 轉移 Eclipse 專案到其他編輯器的方法，就找到了 IntelliJ 跟 VS Code ，當時內心一陣吶喊，太棒拉!</p>
+<p>但實際操作過後，個人認為 VS Code 在 Java 專案開發上的支援還不夠完善，除了需要裝 <code>Java Extension Pack、Spring Boot Enxtension Pack</code> ，還需要加裝 <code>Community Server</code> 使專案能夠在 Tomcat 上運行，並且需要自己全手動去調 <code>Run Configuration</code> 來讓程式順利運行。</p>
+<p>這對一個不熟悉 Java 周邊生態的人來說非常困難且繁瑣，因此妥協，過了一陣子使用 VS Code 編輯完再回到 Eclipse 去 Debug、Compile 的日子。</p>
+<p>但日子過久了最終還是忍不住，只好把希望轉向要付費的 IntelliJ ，覺得一個月 500 也沒差，趕快結束我的痛苦吧!</p>
+<p>沒想到實際使用驚為天人，只要載入 Projec t 時，選取 Maven 的 <code>pom.xml</code> ，IntelliJ 就能自動載入，且設定 <code>Run Configutation</code> 時也有相對應的提示。</p>
+<p>編輯器本身也相當現代化，花少許時間習慣就能上手，而且非常萬幸，在我使用 IntelliJ 沒多久，公司就傳出要購買授權來給員工使用，希望是真的!</p>
+<p>大家如果在轉移到 IntelliJ 的過程中遇到問題的話可以在底下留言聯絡我，也許我能給予一些幫助~</p>
+</div>
 
-      
-      <div class="col-12 mt-5"></div>
+        
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem"></div>
+        <script
+          src="https://utteranc.es/client.js"
+          repo="orenccl/orenccl.github.io"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </div>
     </div>
   </div>
 </section>
-
 
 
 
