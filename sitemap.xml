@@ -2,29 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://orenccl.github.io/categories/</loc>
-    <lastmod>2023-08-19T14:42:00+08:00</lastmod>
-  </url><url>
-    <loc>https://orenccl.github.io/categories/ide/</loc>
-    <lastmod>2023-08-19T14:42:00+08:00</lastmod>
-  </url><url>
-    <loc>https://orenccl.github.io/</loc>
-    <lastmod>2023-08-19T14:42:00+08:00</lastmod>
-  </url><url>
-    <loc>https://orenccl.github.io/blog/migratefromeclipsetointellij/</loc>
-    <lastmod>2023-08-19T14:42:00+08:00</lastmod>
+    <loc>https://orenccl.github.io/about/</loc>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://orenccl.github.io/blog/</loc>
-    <lastmod>2022-10-29T13:49:23+06:00</lastmod>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://orenccl.github.io/about/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <loc>https://orenccl.github.io/categories/</loc>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://orenccl.github.io/contact/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://orenccl.github.io/categories/ide/</loc>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://orenccl.github.io/search/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://orenccl.github.io/</loc>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://orenccl.github.io/blog/migratefromeclipsetointellij/</loc>
+    <lastmod>2023-08-31T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://orenccl.github.io/tags/</loc>
   </url>
