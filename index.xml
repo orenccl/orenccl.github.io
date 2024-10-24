@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jun Chen</title>
     <link>https://orenccl.github.io/</link>
     <description>Recent content on Jun Chen</description>
-    <generator>Hugo</generator>
+    <image>
+      <title>Jun Chen</title>
+      <url>https://orenccl.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://orenccl.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.136.4</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Oct 2024 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://orenccl.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -13,21 +18,7 @@
       <link>https://orenccl.github.io/posts/nginx-not-receiving-sse/</link>
       <pubDate>Thu, 24 Oct 2024 12:00:00 +0800</pubDate>
       <guid>https://orenccl.github.io/posts/nginx-not-receiving-sse/</guid>
-      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Issue: Unable to receive SSE after migrating Nginx configuration from test to production environment&lt;/li&gt;&#xA;&lt;li&gt;Cause: Nginx 1.22.0 defaults to using HTTP/1.0 instead of HTTP/1.1&lt;/li&gt;&#xA;&lt;li&gt;Investigation : Enable debug logs and analyze&lt;/li&gt;&#xA;&lt;li&gt;Solution: Specify HTTP version 1.1 in Nginx global settings&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;scenario&#34;&gt;Scenario&lt;/h2&gt;&#xA;&lt;p&gt;After migrating the same configuration from the test environment to the production environment, regular requests worked normally, but SSE had no response (Timeout).&lt;/p&gt;&#xA;&lt;p&gt;Manual and tool comparisons, as well as ChatGPT analysis, did not reveal any configuration issues.&#xA;The only difference was that the test environment used Nginx version 1.22.1, while the production environment used version 1.22.0.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Archive</title>
-      <link>https://orenccl.github.io/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://orenccl.github.io/archives/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Search</title>
-      <link>https://orenccl.github.io/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://orenccl.github.io/search/</guid>
-      <description></description>
+      <description>No response when trying to receive SSE through Nginx</description>
     </item>
   </channel>
 </rss>

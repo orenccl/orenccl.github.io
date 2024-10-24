@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SSE on Jun Chen</title>
     <link>https://orenccl.github.io/zh-tw/tags/sse/</link>
     <description>Recent content in SSE on Jun Chen</description>
-    <generator>Hugo</generator>
+    <image>
+      <title>Jun Chen</title>
+      <url>https://orenccl.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://orenccl.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.136.4</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 24 Oct 2024 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://orenccl.github.io/zh-tw/tags/sse/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +18,7 @@
       <link>https://orenccl.github.io/zh-tw/posts/nginx-not-receiving-sse/</link>
       <pubDate>Thu, 24 Oct 2024 12:00:00 +0800</pubDate>
       <guid>https://orenccl.github.io/zh-tw/posts/nginx-not-receiving-sse/</guid>
-      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;問題：將 Nginx 配置從測試環境遷移到生產環境後，無法接收 SSE&lt;/li&gt;&#xA;&lt;li&gt;原因：Nginx 1.22.0 預設使用了 HTTP/1.0 而不是 HTTP/1.1&lt;/li&gt;&#xA;&lt;li&gt;調查方法：啟用調試日誌並分析&lt;/li&gt;&#xA;&lt;li&gt;解決方案：在 Nginx 全局設置中指定 HTTP 版本為 1.1&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;情境&#34;&gt;情境&lt;/h2&gt;&#xA;&lt;p&gt;使用一樣的 Config，從測試環境搬移到正式環境後，一般請求皆正常，但 SSE 無回應(Timeout)。&lt;/p&gt;&#xA;&lt;p&gt;經過人工、工具比對，以及 ChatGPT 分析，都沒有發現設定上的問題。&#xA;唯一差異在於測試環境是 1.22.1，而正式環境的 Nginx 版本是 1.22.0。&lt;/p&gt;&#xA;&lt;h2 id=&#34;調查過程&#34;&gt;調查過程&lt;/h2&gt;&#xA;&lt;h3 id=&#34;啟用調試日誌&#34;&gt;啟用調試日誌&lt;/h3&gt;&#xA;&lt;p&gt;首先在 &lt;code&gt;/etc/nginx/nginx.conf&lt;/code&gt; 中啟用調試日誌，印出詳細的錯誤：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/var/log/nginx/error.log&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;debug&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;檢查配置並重新加載 Nginx：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nginx -t&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nginx -s reload&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;h3 id=&#34;分析日誌&#34;&gt;分析日誌&lt;/h3&gt;&#xA;&lt;p&gt;我們可以在 &lt;code&gt;/var/log/nginx/error.log&lt;/code&gt; 找到錯誤資訊。&lt;/p&gt;&#xA;&lt;p&gt;若是緊急線上修復，且很多使用者在線，可能導致 log 過多難以查找，這時候可以用以下方法：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tail -f -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; /var/log/nginx/error.log &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;sse&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# sse可替換為你想要查找的關鍵字&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;這行指令會持續追蹤 &lt;code&gt;error.log&lt;/code&gt; 的最新一行，並且過濾出含有 &amp;ldquo;sse&amp;rdquo; 的 log。&lt;/p&gt;</description>
+      <description>透過 Nginx 獲取 SSE，卻沒有回應</description>
     </item>
   </channel>
 </rss>

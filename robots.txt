@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://orenccl.github.io/sitemap.xml
