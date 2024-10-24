@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>專題 on Jun Chen</title>
+    <link>https://orenccl.github.io/zh-tw/series/</link>
+    <description>Recent content in 專題 on Jun Chen</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 24 Oct 2024 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://orenccl.github.io/zh-tw/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debug 探索之旅</title>
+      <link>https://orenccl.github.io/zh-tw/series/debug-%E6%8E%A2%E7%B4%A2%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Thu, 24 Oct 2024 12:00:00 +0800</pubDate>
+      <guid>https://orenccl.github.io/zh-tw/series/debug-%E6%8E%A2%E7%B4%A2%E4%B9%8B%E6%97%85/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
